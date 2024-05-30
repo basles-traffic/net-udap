@@ -88,3 +88,104 @@ https access is secured using a certificate signed by the CAcert. To import the 
 http://wiki.slimdevices.com/index.php/SBRFrontButtonAndLED
 
 http://forums.slimdevices.com/showpost.php?p=280981&postcount=47
+
+## add my test
+
+first install
+
+git clone https://github.com/robinbowes/net-udap.git
+cd net-udap
+sudo apt install cpanminus
+sudo cpanm Log::StdLog
+sudo cpanm Term::Shell
+sudo cpanm Class::Accessor
+sudo cpanm IO::Interface::Simple
+scripts/udap_shell.pl
+
+
+
+another test 
+
+git clone https://github.com/robinbowes/net-udap.git
+$ cd net-udap
+$ cpan Log::StdLog Term::Shell Class::Accessor IO::Interface::Simple
+$ ./scripts/udap_shell.pl
+UDAP> discover
+
+
+reboot pc and retry cde below
+
+
+
+
+The command sequence I use is as follows:
+1. Start udap
+2. at udap prompt - type "discover"
+3. type "list" to get a list fo the player found.
+4. type "configure 1" - the number is the player from the list
+5. type "list" - show current settings
+6. type "set server_address=192.168.xx.xx squeezecenter_address=192.168.xx.xx" - the address xx.xx is your LMS server
+7. type "save_data"
+8. Usually works or try power off / on the receiver.
+
+What sequence have you tried ? please give full details. 
+
+
+
+real test
+
+./scripts/udap_shell.pl 
+UDAP> discover
+info: <<< Broadcasting adv_discovery message to MAC address 00:00:00:00:00:00 on 255.255.255.255
+info: >>> adv_discovery response received from 00:04:20:ff:ff:01
+info: <<< Broadcasting get_ip message to MAC address 00:04:20:ff:ff:01 on 255.255.255.255
+info: >>> get_ip response received from 00:04:20:ff:ff:01
+info: <<< Broadcasting get_data message to MAC address 00:04:20:ff:ff:01 on 255.255.255.255
+info: >>> get_data response received from 00:04:20:ff:ff:01
+UDAP> list
+ #    MAC Address    Type       Status         
+== ================= ========== ===============
+ 1 00:04:20:ff:ff:01 squeezebox wait_slimserver
+UDAP> configure 1
+UDAP [1] (squeezebox ffff01)> list
+             bridging: 0
+             hostname: classic
+            interface: 1
+          lan_gateway: 192.168.0.1
+          lan_ip_mode: 1
+  lan_network_address: 0.0.0.0
+      lan_subnet_mask: 255.255.255.0
+          primary_dns: 0.0.0.0
+        secondary_dns: 0.0.0.0
+       server_address: 0.0.0.0
+squeezecenter_address: 192.168.0.100
+   squeezecenter_name: NasHome
+        wireless_SSID: t
+     wireless_channel: 6
+      wireless_keylen: 0
+        wireless_mode: 0
+   wireless_region_id: 4
+   wireless_wep_key_0: 00000000000000000000000000
+   wireless_wep_key_1: 00000000000000000000000000
+   wireless_wep_key_2: 00000000000000000000000000
+   wireless_wep_key_3: 00000000000000000000000000
+      wireless_wep_on: 0
+  wireless_wpa_cipher: 3
+    wireless_wpa_mode: 1
+      wireless_wpa_on: 0
+---line 25/26 (any key for more, or q to quit)---
+
+
+
+
+set server_address=192.168.1.100 squeezecenter_address=192.168.1.100
+
+save_data
+
+
+
+
+
+
+
+
