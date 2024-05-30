@@ -137,15 +137,15 @@ real test
 ./scripts/udap_shell.pl 
 UDAP> discover
 info: <<< Broadcasting adv_discovery message to MAC address 00:00:00:00:00:00 on 255.255.255.255
-info: >>> adv_discovery response received from 00:04:20:ff:ff:01
+info: >>> adv_discovery response received from 00:xx:20:ff:xx:01
 info: <<< Broadcasting get_ip message to MAC address 00:04:20:ff:ff:01 on 255.255.255.255
-info: >>> get_ip response received from 00:04:20:ff:ff:01
-info: <<< Broadcasting get_data message to MAC address 00:04:20:ff:ff:01 on 255.255.255.255
-info: >>> get_data response received from 00:04:20:ff:ff:01
+info: >>> get_ip response received from 00:xx:20:ff:xx:01
+info: <<< Broadcasting get_data message to MAC address 00:xx:20:ff:xx:01 on 255.255.255.255
+info: >>> get_data response received from 00:xx:xx:ff:ff:01
 UDAP> list
  #    MAC Address    Type       Status         
 == ================= ========== ===============
- 1 00:04:20:ff:ff:01 squeezebox wait_slimserver
+ 1 00:xx:xx:ff:xx:01 squeezebox wait_slimserver
 UDAP> configure 1
 UDAP [1] (squeezebox ffff01)> list
              bridging: 0
